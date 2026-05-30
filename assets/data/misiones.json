@@ -1,0 +1,407 @@
+[
+    {
+        "id": 1,
+        "titulo": "Resistir el monte",
+        "descripcion": "Cerrá las pestañas que no necesitás ahora mismo",
+        "esencia": "10",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+    {
+        "id": 2,
+        "titulo": "Sellar el caos",
+        "descripcion": "Ordená tu espacio antes de empezar",
+        "esencia": "10",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+
+    {
+        "id": 3,
+        "titulo": "Encender el fogón",
+        "descripcion": "Prepará mate, café o agua antes de trabajar",
+        "esencia": "15",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+    {
+        "id": 4,
+        "titulo": "Marcar el sendero",
+        "descripcion": "Anotá una meta simple para hoy",
+        "esencia": "15",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+    {
+        "id": 5,
+        "titulo": "Guardar el talismán",
+        "descripcion": "Dejá el celular lejos de tu alcance",
+        "esencia": "15",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+    
+    {
+        "id": 6,
+        "titulo": "Silenciar el murmullo",
+        "descripcion": "Cerrá redes sociales por unos minutos",
+        "esencia": "20",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+    {
+        "id": 7,
+        "titulo": "El camino del carpincho",
+        "descripcion": "Trabajá con calma durante unos minutos",
+        "esencia": "20",
+        "estado": "latente",
+        "rango": "Aprendiz",
+        "icono": ""
+    },
+
+
+    {
+        "id": 8,
+        "titulo": "El camino del picaflor",
+        "descripcion": "Terminá una tarea rápida antes de empezar otra",
+        "esencia": "20",
+        "estado": "latente",
+        "rango": "Aprendiz ",
+        "icono": ""
+    },
+
+    {
+        "id": 9,
+        "titulo": "Cruzar la niebla",
+        "descripcion": "Empezá la tarea que venias posponiendo",
+        "esencia": "25",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 10,
+        "titulo": "Seguir el rastro",
+        "descripcion": "Escribí el primer paso de una tarea grande",
+        "esencia": "25",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 11,
+        "titulo": "Mirada del Yacaré",
+        "descripcion": "Revisá y ordená tu lista de pendientes",
+        "esencia": "25",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 12,
+        "titulo": "Huella del Aguará Guazú",
+        "descripcion": "Eliminá una distracción de tu entorno",
+        "esencia": "30",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 13,
+        "titulo": "Ritual del Hornero",
+        "descripcion": "Prepará todo antes de empezar a trabajar",
+        "esencia": "30",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 14,
+        "titulo": "Alas de la bandera",
+        "descripcion": "Anotá algo importante antes de distraerte",
+        "esencia": "30",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+    },
+
+    {
+        "id": 15,
+        "titulo": "Paso del Guanaco",
+        "descripcion": "Terminá una tarea pequeña pendiente",
+        "esencia": "35",
+        "estado": "latente",
+        "rango": "Iniciado",
+        "icono": ""
+
+    },
+
+    {
+        "id": 16,
+        "titulo": "Eco de la Salamanca",
+        "descripcion": "Retomá algo que habías dejado a la mitad",
+        "esencia": "35",
+        "estado": "latente",
+        "rango": "Iniciado ",
+        "icono": ""
+    },
+
+    {
+        "id": 17,
+        "titulo": "Escuchar al silencio",
+        "descripcion": "Trabajá unos minutos sin cambiar de pestaña",
+        "esencia": "40",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 18,
+        "titulo": "Vigilia del Yaguareté",
+        "descripcion": "Concentrate durante cinco minutos seguidos",
+        "esencia": "40",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 19,
+        "titulo": "Luz mala",
+        "descripcion": "Ignora una distracción y seguí trabajando",
+        "esencia": "40",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 20,
+        "titulo": "Vuelo del Cóndor",
+        "descripcion": "Mirá unicamente lo necesario para tu tarea",
+        "esencia": "45",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 21,
+        "titulo": "Custodiar el fuego",
+        "descripcion": "Terminá una tarea antes de empezar otra",
+        "esencia": "45",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 22,
+        "titulo": "Seguír la huella",
+        "descripcion": "Retomá una tarea importante pendiente",
+        "esencia": "45",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 23,
+        "titulo": "Abrir el umbral",
+        "descripcion": "Prepará todo antes de comenzar una sesión de trabajo importante",
+        "esencia": "50",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 24,
+        "titulo": "Invocar la calma",
+        "descripcion": "Respirá profundo y retomá el enfoque",
+        "esencia": "50",
+        "estado": "latente",
+        "rango": "Guardián",
+        "icono": ""
+    },
+
+    {
+        "id": 25,
+        "titulo": "Pacto de sangre",
+        "descripcion": "Escribí qué vas a hacer en los proximos 30 minutos",
+        "esencia": "55",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 26,
+        "titulo": "Romper el hechizo",
+        "descripcion": "Eliminá una distracción de tu entorno",
+        "esencia": "55",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 27,
+        "titulo": "Vigilia nocturna",
+        "descripcion": "Trabajá sin abrir redes sociales",
+        "esencia": "60",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 28,
+        "titulo": "Custodia del monte",
+        "descripcion": "Ordená completamente tu espacio de trabajo",
+        "esencia": "60",
+        "estado": "latente ",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 29,
+        "titulo": "CRuzar el sendero",
+        "descripcion": "Empezá la tarea que más venis evitando",
+        "esencia": "60",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 30,
+        "titulo": "Silenciar la Luz mala",
+        "descripcion": "Ignorá notificaciones durante tu sessión de trabajo",
+        "esencia": "65",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 31,
+        "titulo": "Ritual del Familiar",
+        "descripcion": "Concentrate hasta terminar una tarea corta",
+        "esencia": "65",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 32,
+        "titulo": "Paso del Cóndor Andino",
+        "descripcion": "Mantené el enfoque durante diez minutos seguidos",
+        "esencia": "70",
+        "estado": "latente",
+        "rango": "Brujo",
+        "icono": ""
+    },
+
+    {
+        "id": 33,
+        "titulo": "Despertar de la Salamanca",
+        "descripcion": "Trabajá diez minutos sin distracciones",
+        "esencia": "75",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 34,
+        "titulo": "Vigilia del Pompero",
+        "descripcion": "Concentrate completamente en una sola tarea",
+        "esencia": "75",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 35,
+        "titulo": "Cruzar la oscuridad",
+        "descripcion": "Terminá algo que venías evitando hace tiempo",
+        "esencia": "80",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 36,
+        "titulo": "Invocar el silencio",
+        "descripcion": "Trabajá en absoluto silencio durante unos minutos",
+        "esencia": "80",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 37,
+        "titulo": "Huella del Nahuelito",
+        "descripcion": "Mantené el enfoque sin cambiar de aplicación",
+        "esencia": "85",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 38,
+        "titulo": "Ritual de la Difunta Correa",
+        "descripcion": "Organizá todo antes de empezar una sesión de trabajo importante",
+        "esencia": "85",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 39,
+        "titulo": "Camino del Lobizón",
+        "descripcion": "Terminá una tarea larga sin interrupciones",
+        "esencia": "90",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    },
+
+    {
+        "id": 40,
+        "titulo": "Guardián de la cueva",
+        "descripcion": "Completá una sesión completa de enqoque sin distraerte",
+        "esencia": "100",
+        "estado": "latente",
+        "rango": "Leyenda",
+        "icono": ""
+    }
+
+
+]
