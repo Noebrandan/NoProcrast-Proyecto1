@@ -1,0 +1,22 @@
+Buenas buenas equipo! 
+
+Voy a explicar el proyecto. 
+
+**Idea 1: Anti-Procrastination Quest**
+
+- **Nicho**: Productividad, gaming y estudiantes
+
+- **Páginas**: Inicio; Misiones o tareas; Perfil o progreso
+
+- **Funcionalidades JS posibles:** Crear tareas como misiones; Marcar misiones como completadas; Sumar puntos o niveles; Filtrar misiones por estado; Guardar progreso en localStorage.
+
+- **Storage:** Guardar misiones creadas, estado de cada misión, puntos acumulados o nivel del usuario
+
+- **Desafío obligatorio:** El sistema debe mostrar progreso del usuario y cambiar el estado visual de las misiones según estén pendientes, activas o completadas.
+
+
+¿A qué llegamos? Hacer un tipo "duolingo" versión folclorica dark argentina. Va a funcionar? Ya lo veremos jaja
+
+Todo va a estar simplificado, lo especial van a ser las "cartas folcloricas", vamos a mandarle "coleccionable" a ver si motiva o algo... osea si, tiene que motivar.
+
+El concepto de "anti-procrastinación" esta, que vaya a funcionar con los usuarios es otra cosa jaja
