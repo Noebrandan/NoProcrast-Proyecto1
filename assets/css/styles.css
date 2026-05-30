@@ -1,0 +1,238 @@
+/* ═══════════════════════════════════════════
+   SALAMANCA — styles.css
+   Global styles: variables, reset, typography,
+   navigation, layout base, utilities.
+   All pages import this file.
+   ═══════════════════════════════════════════ */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ─── Variables ─────────────────────────────────────────────────── */
+
+:root {
+  --bg-primary:    #1c1510;
+  --bg-secondary:  #231a12;
+  --bg-card:       #2a1f14;
+  --bg-nav:        #160f08;
+
+  --dorado:        #c9a84c;
+  --dorado-claro:  #e2c06a;
+  --dorado-suave:  #8a6f35;
+  --dorado-opaco:  rgba(201, 168, 76, 0.15);
+  --dorado-borde:  rgba(201, 168, 76, 0.3);
+
+  --tierra:        #7a4a1e;
+  --rojo-ritual:   #9b2020;
+
+  --texto:         #f0e8d8;
+  --texto-suave:   #a08060;
+  --texto-muted:   #5a4030;
+
+  --border:        #3a2a1a;
+  --border-dorado: rgba(201, 168, 76, 0.25);
+
+  --font-titulo:   'Cinzel', serif;
+  --font-cuerpo:   'Crimson Text', serif;
+
+  --gap-xs:  0.35rem;
+  --gap-sm:  0.6rem;
+  --gap-md:  1rem;
+  --gap-lg:  2rem;
+  --gap-xl:  3.5rem;
+
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --transition: 0.25s ease;
+  --nav-height: 64px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────────── */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--texto);
+  font-family: var(--font-cuerpo);
+  font-size: 1.05rem;
+  line-height: 1.65;
+  min-height: 100vh;
+}
+
+img   { display: block; max-width: 100%; }
+a     { color: inherit; text-decoration: none; }
+ul,ol { list-style: none; }
+button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+/* ─── Typography ────────────────────────────────────────────────── */
+
+h1, h2, h3, h4 {
+  font-family: var(--font-titulo);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--texto);
+}
+
+h1 { font-size: clamp(2rem,   5vw, 3.5rem); }
+h2 { font-size: clamp(1.4rem, 3vw, 2rem);   }
+h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
+
+/* ─── Navigation ────────────────────────────────────────────────── */
+
+.nav-principal {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 100;
+  height: var(--nav-height);
+  background-color: var(--bg-nav);
+  border-bottom: 1px solid var(--border-dorado);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gap-lg);
+}
+
+.nav-logo {
+  font-family: var(--font-titulo);
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: var(--dorado);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  transition: color var(--transition), text-shadow var(--transition);
+}
+
+.nav-logo:hover {
+  color: var(--dorado-claro);
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.5);
+}
+
+.nav-links {
+  display: flex;
+  gap: var(--gap-lg);
+  align-items: center;
+}
+
+.nav-links a {
+  font-family: var(--font-titulo);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  transition: color var(--transition);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0;
+  width: 0; height: 1px;
+  background: linear-gradient(to right, transparent, var(--dorado), transparent);
+  transition: width var(--transition);
+}
+
+.nav-links a:hover {
+  color: var(--dorado-claro);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ─── Page offset for fixed nav ─────────────────────────────────── */
+
+main {
+  padding-top: var(--nav-height);
+}
+
+/* ─── Buttons ───────────────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition), color var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
+  background: linear-gradient(135deg, var(--dorado-suave), var(--dorado));
+  color: #1c1510;
+  border: 1px solid var(--dorado);
+}
+
+.btn:hover {
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.4);
+}
+
+/* ─── Footer ────────────────────────────────────────────────────── */
+
+footer {
+  border-top: 1px solid var(--border-dorado);
+  padding: var(--gap-lg);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+}
+
+footer p:first-child {
+  font-family: var(--font-cuerpo);
+  font-style: italic;
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+footer p:last-child {
+  font-family: var(--font-titulo);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+}
+
+/* ─── Responsive — Navigation ───────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .nav-principal {
+    padding: 0 var(--gap-md);
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--nav-height);
+    left: 0; right: 0;
+    background-color: var(--bg-nav);
+    border-bottom: 1px solid var(--border-dorado);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--gap-sm) 0;
+    transform: translateY(-110%);
+    transition: transform var(--transition);
+    z-index: 99;
+  }
+
+  .nav-links a {
+    padding: 0.9rem var(--gap-lg);
+    width: 100%;
+    display: block;
+    font-size: 0.8rem;
+  }
+
+  .nav-links a::after { display: none; }
+}
