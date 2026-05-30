@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salamanca</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <header>
+
+        <nav class="nav-principal">
+
+            <a class="nav-logo" href="index.html">Salamanca</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="pages/misiones.html">Misiones</a></li>
+                <li><a href="pages/perfil.html">Perfil</a></li>
+            </ul>
+            
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <section class="welcome" id="welcome-screen">
+
+            <h2>¿Cómo te llaman en la cueva?</h2>
+            <input type="text" id="name-input" placeholder="Tu nombre">
+            <button id="enter-btn">Ingresar a la cueva</button>
+
+        </section>
+
+        <section class="hero">
+            <h1>La cueva te espera</h1>
+            <p>Convertí pequeñas tareas en progreso y desbloqueá nuevas figuras argentinas.</p>
+            <a href="pages/misiones.html" class="btn">Comenzar</a>
+        </section>
+
+        <section class="stats">
+
+            <div class="stat-card"> 
+                <span class="stat-valor" id="total-essence">0</span>
+                <span class="stat-label">Esencia</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-valor" id="sealed-missions">0</span>
+                <span class="stat-label">Selladas</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-valor" id="current-rank">Aprendiz</span>
+                <span class="stat-label">Rango</span>
+            </div>
+
+        </section>
+
+    </main>
+
+    
+
+    <footer>
+        <p>La cueva siempre recuerda a quienes regresan.</p>
+        <p>Salamanca © 2026 — Toda leyenda comienza con un paso.</p>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+    
+</body>
+
+</html>
