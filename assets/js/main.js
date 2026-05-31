@@ -19,8 +19,10 @@ function initWelcome() {
 
   if (savedName) {
     welcomeScreen.style.display = 'none';
+    welcomeScreen.setAttribute('aria-hidden', 'true');
   } else {
     welcomeScreen.style.display = 'flex';
+    welcomeScreen.setAttribute('aria-hidden', 'false');
     enterBtn.addEventListener('click', saveName);
     nameInput.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') saveName();
@@ -59,6 +61,7 @@ function hideWelcome() {
   welcomeScreen.addEventListener('animationend', () => {
     welcomeScreen.style.display = 'none';
     welcomeScreen.classList.remove('fade-out');
+    welcomeScreen.setAttribute('aria-hidden', 'true');
   }, { once: true });
 }
 
@@ -74,6 +77,7 @@ function showWelcomeError(message) {
   error.setAttribute('role', 'alert');
 
   enterBtn.insertAdjacentElement('afterend', error);
+  nameInput.focus();
 
   setTimeout(() => error.remove(), 3000);
 }

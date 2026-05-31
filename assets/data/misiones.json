@@ -78,7 +78,7 @@
         "descripcion": "Terminá una tarea rápida antes de empezar otra",
         "esencia": "20",
         "estado": "latente",
-        "rango": "Aprendiz ",
+        "rango": "Aprendiz",
         "icono": ""
     },
 
@@ -159,7 +159,7 @@
         "descripcion": "Retomá algo que habías dejado a la mitad",
         "esencia": "35",
         "estado": "latente",
-        "rango": "Iniciado ",
+        "rango": "Iniciado",
         "icono": ""
     },
 
@@ -278,7 +278,7 @@
         "titulo": "Custodia del monte",
         "descripcion": "Ordená completamente tu espacio de trabajo",
         "esencia": "60",
-        "estado": "latente ",
+        "estado": "latente",
         "rango": "Brujo",
         "icono": ""
     },
