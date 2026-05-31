@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Misiones | Salamanca</title>
+
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/misiones.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header>
+
+        <nav class="nav-principal" aria-label="Navegación principal">
+
+            <a class="nav-logo" href="../index.html">
+                Salamanca
+            </a>
+
+            <ul class="nav-links">
+                <li><a href="../index.html">Inicio</a></li>
+                <li><a href="misiones.html" aria-current="page">Misiones</a></li>
+                <li><a href="perfil.html">Perfil</a></li>
+            </ul>
+
+        </nav>
+
+    </header>
+
+    <main id="main-content">
+
+        <section class="misiones-header">
+
+            <h1>Misiones de la Cueva</h1>
+
+            <p>
+                Cada misión completada fortalece tu esencia y acerca nuevas figuras legendarias.
+            </p>
+
+        </section>
+
+        <section class="filtros" aria-labelledby="filtros-title">
+
+            <h2 id="filtros-title" class="sr-only">Filtros de misiones</h2>
+
+            <div class="filtro-grupo" role="group" aria-labelledby="estado-filtro-title">
+
+                <h3 id="estado-filtro-title">Estado</h3>
+
+                <button type="button" class="filtro-btn" data-estado="todos" aria-pressed="true">
+                    Todas
+                </button>
+
+                <button type="button" class="filtro-btn" data-estado="latente" aria-pressed="false">
+                    Latentes
+                </button>
+
+                <button type="button" class="filtro-btn" data-estado="sellada" aria-pressed="false">
+                    Selladas
+                </button>
+
+            </div>
+
+            <div class="filtro-grupo" role="group" aria-labelledby="rango-filtro-title">
+
+                <h3 id="rango-filtro-title">Rango</h3>
+
+                <button type="button" class="rango-btn" data-rango="todos" aria-pressed="true">
+                    Todos
+                </button>
+
+                <button type="button" class="rango-btn" data-rango="Aprendiz" aria-pressed="false">
+                    Aprendiz
+                </button>
+
+                <button type="button" class="rango-btn" data-rango="Iniciado" aria-pressed="false">
+                    Iniciado
+                </button>
+
+                <button type="button" class="rango-btn" data-rango="Guardián" aria-pressed="false">
+                    Guardián
+                </button>
+
+                <button type="button" class="rango-btn" data-rango="Brujo" aria-pressed="false">
+                    Brujo
+                </button>
+
+                <button type="button" class="rango-btn" data-rango="Leyenda" aria-pressed="false">
+                    Leyenda
+                </button>
+
+            </div>
+
+        </section>
+
+        <div id="misiones-status" class="misiones-status sr-only" aria-live="polite" aria-atomic="true">
+            Mostrando todas las misiones.
+        </div>
+
+        <section
+            id="misiones-container"
+            class="misiones-container"
+            aria-label="Lista de misiones">
+
+        </section>
+
+    </main>
+
+    <footer>
+
+        <p>
+            La cueva siempre recuerda a quienes regresan.
+        </p>
+
+        <p>
+            Salamanca © 2026 — Toda leyenda comienza con un paso.
+        </p>
+
+    </footer>
+
+    <script type="module" src="../assets/js/misiones.js"></script>
+    <script type="module" src="../assets/js/filtros.js"></script>
+
+</body>
+
+</html>

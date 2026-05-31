@@ -12,14 +12,16 @@
 
 <body>
 
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
     <header>
 
-        <nav class="nav-principal">
+        <nav class="nav-principal" aria-label="Navegación principal">
 
             <a class="nav-logo" href="index.html">Salamanca</a>
 
             <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
                 <li><a href="pages/misiones.html">Misiones</a></li>
                 <li><a href="pages/perfil.html">Perfil</a></li>
             </ul>
@@ -29,13 +31,14 @@
     </header>
 
 
-    <main>
+    <main id="main-content">
 
-        <section class="welcome" id="welcome-screen">
+        <section class="welcome" id="welcome-screen" aria-labelledby="welcome-title">
 
-            <h2>¿Cómo te llaman en la cueva?</h2>
-            <input type="text" id="name-input" placeholder="Tu nombre">
-            <button id="enter-btn">Ingresar a la cueva</button>
+            <h2 id="welcome-title">¿Cómo te llaman en la cueva?</h2>
+            <label class="sr-only" for="name-input">Nombre de usuario</label>
+            <input type="text" id="name-input" placeholder="Tu nombre" autocomplete="name">
+            <button id="enter-btn" type="button">Ingresar a la cueva</button>
 
         </section>
 

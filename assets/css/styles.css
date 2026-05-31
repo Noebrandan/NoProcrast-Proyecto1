@@ -71,6 +71,48 @@ a     { color: inherit; text-decoration: none; }
 ul,ol { list-style: none; }
 button { cursor: pointer; font-family: inherit; border: none; background: none; }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translateY(-120%);
+  background: var(--dorado);
+  color: var(--bg-primary);
+  padding: 0.75rem 1rem;
+  z-index: 200;
+  transition: transform var(--transition);
+}
+
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 3px solid var(--bg-primary);
+}
+
+:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 3px;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--dorado);
+  outline-offset: 3px;
+}
+
 /* ─── Typography ────────────────────────────────────────────────── */
 
 h1, h2, h3, h4 {
@@ -126,7 +168,7 @@ h3 { font-size: clamp(1.1rem, 2vw, 1.4rem); }
   font-weight: 400;
   letter-spacing: 0.15em;
   text-transform: uppercase;
-  color: var(--texto-suave);
+  color: var(--texto);
   transition: color var(--transition);
   position: relative;
   padding-bottom: 4px;
