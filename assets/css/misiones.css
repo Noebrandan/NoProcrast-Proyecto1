@@ -1,102 +1,430 @@
+/* ═══════════════════════════════════════════
+   SALAMANCA — misiones.css
+   Styles for misiones.html:
+   header, filtros, cards, overlay de carta.
+   Requires styles.css to be loaded first.
+   ═══════════════════════════════════════════ */
+
+/* ─── Misiones Header ───────────────────────────────────────────── */
+
 .misiones-header {
-    text-align: center;
-    padding: 3rem 1rem;
+  text-align: center;
+  padding: calc(var(--nav-height) + 2rem) var(--gap-lg) var(--gap-lg);
 }
 
 .misiones-header h1 {
-    color: var(--dorado);
-    margin-bottom: 1rem;
+  color: var(--dorado);
+  margin-bottom: var(--gap-sm);
 }
 
 .misiones-header p {
-    color: var(--texto-suave);
+  color: var(--texto-suave);
+  font-style: italic;
+  font-size: 1.05rem;
+  max-width: 480px;
+  margin: 0 auto;
 }
 
+/* ─── Filtros ───────────────────────────────────────────────────── */
+
 .filtros {
-    padding: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 2rem;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-md);
+  padding: 0 var(--gap-lg) var(--gap-lg);
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .filtro-grupo {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--gap-sm);
 }
 
 .filtro-grupo h3 {
-    text-align: center;
+  font-family: var(--font-titulo);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+  margin: 0;
+  min-width: 60px;
+  flex-shrink: 0;
 }
 
 .filtro-btn,
 .rango-btn {
-    background-color: var(--bg-card);
-    color: var(--texto);
-    border: 1px solid var(--dorado);
-    padding: 0.7rem 1rem;
-    border-radius: 6px;
+  font-family: var(--font-titulo);
+  font-size: 0.65rem;
+  font-weight: 400;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-dorado);
+  background: transparent;
+  color: var(--texto-suave);
+  cursor: pointer;
+  transition: background-color var(--transition), color var(--transition),
+              border-color var(--transition), box-shadow var(--transition);
 }
 
 .filtro-btn:hover,
-.rango-btn:hover,
-.filtro-btn:focus-visible,
-.rango-btn:focus-visible {
-    background-color: var(--dorado);
-    color: var(--bg-primary);
+.rango-btn:hover {
+  border-color: var(--dorado);
+  color: var(--dorado-claro);
+  background: var(--dorado-opaco);
 }
 
 .filtro-btn[aria-pressed="true"],
 .rango-btn[aria-pressed="true"],
 .filtro-btn.activo,
 .rango-btn.activo {
-    background-color: var(--dorado);
-    color: var(--bg-primary);
-    box-shadow: inset 0 0 0 2px var(--bg-primary);
+  background: var(--dorado-opaco);
+  border-color: var(--dorado);
+  color: var(--dorado);
+  box-shadow: 0 0 12px rgba(201, 168, 76, 0.15);
 }
+
+/* ─── Misiones Status (sr-only visible on announce) ─────────────── */
+
+.misiones-status {
+  text-align: center;
+  padding: 0 var(--gap-lg) var(--gap-sm);
+  color: var(--texto-muted);
+  font-size: 0.85rem;
+}
+
+/* ─── Misiones Container ────────────────────────────────────────── */
 
 .misiones-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--gap-md);
+  padding: 0 var(--gap-lg) var(--gap-xl);
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* ─── Card Misión ───────────────────────────────────────────────── */
+
 .card-mision {
-    background-color: var(--bg-card);
-    border: 1px solid var(--border-dorado);
-    border-radius: 8px;
-    padding: 1rem;
+  background: linear-gradient(160deg, var(--bg-card) 0%, #221508 100%);
+  border: 1px solid var(--border-dorado);
+  border-radius: var(--radius-md);
+  padding: var(--gap-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sm);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition),
+              transform var(--transition), opacity var(--transition);
+}
+
+.card-mision::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 24px; height: 24px;
+  border-top: 1px solid var(--dorado-suave);
+  border-left: 1px solid var(--dorado-suave);
+  border-radius: var(--radius-md) 0 0 0;
+  opacity: 0.4;
+  transition: opacity var(--transition);
+}
+
+.card-mision:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.1);
+}
+
+.card-mision:hover::before {
+  opacity: 0.9;
+}
+
+/* Estado sellada — atenuada */
+.card-mision.estado-sellada {
+  opacity: 0.6;
+  border-left: 3px solid var(--dorado-suave);
+}
+
+.card-mision.estado-sellada:hover {
+  opacity: 0.75;
+}
+
+/* Estado bloqueada — rangos que el usuario aún no alcanzó */
+.card-mision.estado-bloqueada {
+  opacity: 0.45;
+  border-left: 3px solid var(--texto-muted);
+  filter: grayscale(0.3);
+}
+
+.card-mision.estado-bloqueada:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+/* ─── Partes de la card ─────────────────────────────────────────── */
+
+.card-mision-icono {
+  font-size: 1.8rem;
+  line-height: 1;
 }
 
 .card-mision h3 {
-    color: var(--dorado);
-    margin-bottom: 1rem;
+  font-family: var(--font-titulo);
+  color: var(--dorado);
+  font-size: 1rem;
+  line-height: 1.3;
+  margin: 0;
 }
 
-.card-mision p {
-    margin-bottom: 1rem;
+.card-mision-desc {
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  flex: 1;
+  margin: 0;
 }
 
-.card-mision button {
+.card-mision-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+  margin-top: auto;
+}
+
+.meta-tag {
+  font-family: var(--font-titulo);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--bg-secondary);
+  color: var(--texto-suave);
+}
+
+.meta-esencia {
+  border-color: rgba(201, 168, 76, 0.2);
+  color: var(--dorado-claro);
+}
+
+/* ─── Badges de estado ──────────────────────────────────────────── */
+
+.estado-badge {
+  font-family: var(--font-titulo);
+  font-size: 0.6rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  width: fit-content;
+}
+
+.estado-badge.estado-latente {
+  background: rgba(90, 64, 48, 0.3);
+  border: 1px solid rgba(90, 64, 48, 0.5);
+  color: var(--texto-muted);
+}
+
+.estado-badge.estado-sellada {
+  background: rgba(201, 168, 76, 0.12);
+  border: 1px solid rgba(201, 168, 76, 0.3);
+  color: var(--dorado-suave);
+}
+
+.estado-badge.estado-bloqueada {
+  background: rgba(40, 30, 20, 0.5);
+  border: 1px solid rgba(60, 42, 26, 0.4);
+  color: var(--texto-muted);
+}
+
+/* ─── Botón Sellar ──────────────────────────────────────────────── */
+
+.btn-sellar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.65rem 1.5rem;
+  width: 100%;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--dorado-suave), var(--dorado));
+  color: #1c1510;
+  border: 1px solid var(--dorado);
+  margin-top: var(--gap-xs);
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.btn-sellar:hover {
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.35);
+}
+
+/* ─── Overlay de carta (card drop) ─────────────────────────────── */
+
+#card-drop-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
+
+#card-drop-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.card-drop-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 6, 3, 0.88);
+  backdrop-filter: blur(4px);
+}
+
+.card-drop-modal {
+  position: relative;
+  z-index: 1;
+  background: linear-gradient(160deg, var(--bg-card) 0%, #1a0f06 100%);
+  border: 1px solid var(--dorado-borde);
+  border-radius: var(--radius-md);
+  padding: var(--gap-lg);
+  max-width: 360px;
+  width: calc(100% - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-md);
+  text-align: center;
+  box-shadow: 0 0 60px rgba(201, 168, 76, 0.15), 0 20px 60px rgba(0,0,0,0.6);
+  transform: scale(0.9) translateY(16px);
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+#card-drop-overlay.visible .card-drop-modal {
+  transform: scale(1) translateY(0);
+}
+
+.card-drop-subtitulo {
+  font-family: var(--font-cuerpo);
+  font-style: italic;
+  color: var(--texto-suave);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card-drop-titulo {
+  font-family: var(--font-titulo);
+  font-size: clamp(1.1rem, 4vw, 1.5rem);
+  color: var(--dorado);
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 0 30px rgba(201, 168, 76, 0.4);
+}
+
+.card-drop-imagen-wrap {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border-dorado);
+  border-radius: var(--radius-md);
+  background: var(--bg-secondary);
+  overflow: hidden;
+}
+
+.card-drop-imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-drop-mensaje {
+  font-family: var(--font-titulo);
+  font-size: 0.6rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--texto-muted);
+  margin: 0;
+}
+
+.card-drop-cerrar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.65rem 2rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--dorado-suave), var(--dorado));
+  color: #1c1510;
+  border: 1px solid var(--dorado);
+  transition: background var(--transition), box-shadow var(--transition);
+  width: 100%;
+}
+
+.card-drop-cerrar:hover {
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.35);
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .misiones-header {
+    padding: calc(var(--nav-height) + 1rem) var(--gap-md) var(--gap-md);
+  }
+
+  .filtros {
+    padding: 0 var(--gap-md) var(--gap-md);
+    gap: var(--gap-sm);
+  }
+
+  .filtro-grupo {
+    gap: var(--gap-xs);
+  }
+
+  .filtro-grupo h3 {
     width: 100%;
-    background: var(--dorado);
-    color: var(--bg-primary);
-    padding: 0.7rem;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-}
+    min-width: unset;
+    margin-bottom: 0.2rem;
+  }
 
-.card-mision button:hover {
-    opacity: 0.9;
-}
+  .misiones-container {
+    grid-template-columns: 1fr;
+    padding: 0 var(--gap-md) var(--gap-lg);
+  }
 
-.estado-latente {
-    border-left: 5px solid gray;
-}
+  .card-drop-modal {
+    padding: var(--gap-md);
+  }
 
-.estado-sellada {
-    border-left: 5px solid gold;
+  .card-drop-imagen-wrap {
+    width: 140px;
+    height: 140px;
+  }
 }

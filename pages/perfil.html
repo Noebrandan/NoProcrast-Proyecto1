@@ -24,113 +24,94 @@
     </header>
 
     <main id="main-content">
-
         <div class="container">
 
             <!-- PERFIL -->
-            <section class="profile-card">
+            <section class="profile-card" aria-labelledby="profile-heading">
 
                 <div class="profile-top">
-
                     <div class="profile-info">
-                        <div class="avatar">⚔️</div>
+                        <div class="avatar" id="profile-avatar" aria-hidden="true">⚔️</div>
                         <div>
-                                <h2 id="profile-name">Aprendiz</h2>
-                                <div class="badge">👑 Nivel 2 · Explorador</div>
-                            </div>
+                            <h2 id="profile-name">—</h2>
+                            <div class="badge" id="profile-badge" aria-live="polite">🌱 Aprendiz</div>
+                        </div>
                     </div>
-
-                    <button class="btn-outline">Editar nombre</button>
-
+                    <button class="btn-outline" id="edit-btn" type="button">Editar nombre</button>
                 </div>
 
-                <div class="progress-section">
+                <div class="progress-section" aria-label="Progreso al siguiente rango">
                     <div class="progress-header">
-                        <span>Progreso al nivel 3 · Guerrero</span>
-                        <span>65 / 150 pts</span>
+                        <span id="progress-label">Progreso al siguiente rango</span>
+                        <span id="progress-numbers" aria-live="polite">0 / 0 esencia</span>
                     </div>
-                    <div class="progress-bar">
-                        <div class="progress-fill"></div>
+                    <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progress-label">
+                        <div class="progress-fill" id="progress-fill"></div>
                     </div>
                 </div>
 
-                <button class="reset-btn">Reiniciar progreso</button>
+                <button class="reset-btn" id="reset-btn" type="button">Reiniciar progreso</button>
 
             </section>
 
             <!-- EDITAR NOMBRE -->
-                <section class="edit-card" style="display:none;">
-
+            <section class="edit-card" id="edit-card" style="display:none;" aria-label="Editar nombre">
                 <h3>Editar nombre</h3>
-                <input id="edit-input" type="text" value="">
+                <label class="sr-only" for="edit-input">Nuevo nombre</label>
+                <input id="edit-input" type="text" value="" maxlength="30" autocomplete="off">
                 <div class="buttons">
-                    <button class="btn-primary">Guardar</button>
-                    <button class="btn-secondary">Cancelar</button>
+                    <button class="btn-primary" id="save-btn" type="button">Guardar</button>
+                    <button class="btn-secondary" id="cancel-btn" type="button">Cancelar</button>
                 </div>
-
             </section>
 
             <!-- ESTADÍSTICAS -->
-            <section class="stats">
-
-                <h3>Estadísticas</h3>
-
+            <section class="stats" aria-labelledby="stats-heading">
+                <h3 id="stats-heading">Estadísticas</h3>
                 <div class="stats-grid">
                     <div class="stat-box">
-                        <div class="number yellow">65</div>
+                        <div class="number yellow" id="stat-esencia" aria-live="polite">0</div>
                         <p>Esencia total</p>
                     </div>
                     <div class="stat-box">
-                        <div class="number green">4</div>
+                        <div class="number green" id="stat-selladas" aria-live="polite">0</div>
                         <p>Selladas</p>
                     </div>
                     <div class="stat-box">
-                        <div class="number red">3</div>
+                        <div class="number red" id="stat-pendientes" aria-live="polite">0</div>
                         <p>Pendientes</p>
                     </div>
                     <div class="stat-box">
-                        <div class="number white">7</div>
+                        <div class="number white" id="stat-total" aria-live="polite">0</div>
                         <p>Total</p>
                     </div>
                 </div>
-
             </section>
 
             <!-- LOGROS -->
-            <section class="achievements">
-
-                <h3>Logros</h3>
-
-                <div class="achievement-grid">
-                    <div class="achievement unlocked">
-                        <div class="icon">🎯</div>
-                        <span>Primera misión</span>
-                    </div>
-                    <div class="achievement unlocked">
-                        <div class="icon">🔥</div>
-                        <span>3 en un día</span>
-                    </div>
-                    <div class="achievement locked">
-                        <div class="icon">📅</div>
-                        <span>Semana perfecta</span>
-                    </div>
-                    <div class="achievement locked">
-                        <div class="icon">👑</div>
-                        <span>Nivel leyenda</span>
-                    </div>
+            <section class="achievements" aria-labelledby="logros-heading">
+                <h3 id="logros-heading">Logros</h3>
+                <div class="achievement-grid" id="logros-grid">
+                    <!-- Renderizado por perfil.js -->
                 </div>
+            </section>
 
+            <!-- COLECCIÓN DE CARTAS -->
+            <section class="collection" aria-labelledby="coleccion-heading">
+                <h3 id="coleccion-heading">Colección</h3>
+                <p class="collection-subtitle" id="coleccion-subtitulo">Las figuras que la cueva te reveló.</p>
+                <div class="collection-grid" id="coleccion-grid" aria-live="polite">
+                    <!-- Renderizado por perfil.js -->
+                </div>
             </section>
 
         </div>
-
     </main>
 
     <footer>
         <p>La cueva siempre recuerda a quienes regresan.</p>
         <p>Salamanca © 2026 — Toda leyenda comienza con un paso.</p>
     </footer>
-</footer>
 
     <script type="module" src="../assets/js/perfil.js"></script>
 
