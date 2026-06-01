@@ -9,8 +9,6 @@ import {
 
 import { calculateRank, RANGOS } from './misiones.js';
 
-// ─── Elementos del DOM ────────────────────────────────────────────────────────
-
 const profileName    = document.getElementById('profile-name');
 const profileBadge   = document.getElementById('profile-badge');
 const profileAvatar  = document.getElementById('profile-avatar');
@@ -36,7 +34,6 @@ const saveBtn   = document.getElementById('save-btn');
 const cancelBtn = document.getElementById('cancel-btn');
 const resetBtn  = document.getElementById('reset-btn');
 
-// ─── Definición de logros ─────────────────────────────────────────────────────
 
 const LOGROS = [
   {
@@ -97,8 +94,6 @@ const LOGROS = [
   },
 ];
 
-// ─── Carga completa del perfil ────────────────────────────────────────────────
-
 function loadProfile() {
   const name     = getName();
   const essence  = getEssence();
@@ -109,31 +104,19 @@ function loadProfile() {
   const sealed   = missions.filter((m) => m.estado === 'sellada').length;
   const pending  = missions.length - sealed;
 
-  // Nombre
   profileName.textContent = name || 'Desconocido';
   if (editInput) editInput.value = name || '';
 
-  // Badge y avatar
   profileBadge.textContent  = `${rank.icono} ${rank.nombre}`;
   profileAvatar.textContent = rank.icono;
-
-  // Stats
   statEsencia.textContent   = essence;
   statSelladas.textContent  = sealed;
   statPendientes.textContent = pending;
   statTotal.textContent     = missions.length;
-
-  // Barra de progreso
   updateProgressBar(essence, rank);
-
-  // Logros
   renderLogros({ esencia: essence, selladas: sealed, cartas: collection.length });
-
-  // Colección
   renderColeccion(collection);
 }
-
-// ─── Barra de progreso ────────────────────────────────────────────────────────
 
 function updateProgressBar(essence, rank) {
   const rankIndex  = RANGOS.findIndex((r) => r.nombre === rank.nombre);
@@ -157,18 +140,12 @@ function updateProgressBar(essence, rank) {
   progressLabel.textContent   = `Progreso hacia ${nextRank.icono} ${nextRank.nombre}`;
   progressNumbers.textContent = `${essence} / ${nextMin} esencia`;
   progressBar.setAttribute('aria-valuenow', pct);
-
-  // requestAnimationFrame garantiza que el navegador pinte el estado
-  // inicial (width: 0%) antes de aplicar el ancho final, permitiendo
-  // que la transición CSS se dispare correctamente.
   requestAnimationFrame(() => {
     requestAnimationFrame(() => {
       progressFill.style.width = `${pct}%`;
     });
   });
 }
-
-// ─── Logros ───────────────────────────────────────────────────────────────────
 
 function renderLogros({ esencia, selladas, cartas }) {
   logrosGrid.innerHTML = '';
@@ -190,8 +167,6 @@ function renderLogros({ esencia, selladas, cartas }) {
   });
 }
 
-// ─── Colección de cartas ──────────────────────────────────────────────────────
-
 function renderColeccion(collection) {
   coleccionGrid.innerHTML = '';
 
@@ -205,7 +180,6 @@ function renderColeccion(collection) {
     return;
   }
 
-  // Deduplicar: contar cuántas veces aparece cada carta
   const conteo = collection.reduce((acc, carta) => {
     const key = carta.archivo;
     if (!acc[key]) acc[key] = { ...carta, cantidad: 0 };
@@ -236,8 +210,6 @@ function renderColeccion(collection) {
     coleccionGrid.appendChild(card);
   });
 }
-
-// ─── Editar nombre ────────────────────────────────────────────────────────────
 
 function showEdit() {
   editCard.style.display = 'block';
@@ -281,19 +253,13 @@ function showProfileError(message) {
   setTimeout(() => error.remove(), 3000);
 }
 
-// ─── Reiniciar progreso ───────────────────────────────────────────────────────
-
 function handleReset() {
   resetAll();
-  // Redirigir al inicio para que el usuario ingrese su nombre de nuevo
   window.location.href = '../index.html';
 }
 
-// ─── Listeners ────────────────────────────────────────────────────────────────
-
 document.addEventListener('DOMContentLoaded', () => {
   loadProfile();
-
   editBtn.addEventListener('click', showEdit);
   saveBtn.addEventListener('click', saveNameHandler);
   cancelBtn.addEventListener('click', hideEdit);

@@ -1,8 +1,6 @@
 import { getName, setName, getEssence, getMissions } from './storage.js';
 import { calculateRank } from './misiones.js';
 
-// Elementos del Dom
-
 const welcomeScreen = document.getElementById('welcome-screen');
 const nameInput     = document.getElementById('name-input');
 const enterBtn      = document.getElementById('enter-btn');
@@ -10,9 +8,6 @@ const enterBtn      = document.getElementById('enter-btn');
 const statEssence   = document.getElementById('total-essence');
 const statSealed    = document.getElementById('sealed-missions');
 const statRank      = document.getElementById('current-rank');
-
-
-// Función para la bienvenida, una especie de "inicio de sesión" solo con el nobre
 
 function initWelcome() {
   const savedName = getName();
@@ -29,11 +24,6 @@ function initWelcome() {
     });
   }
 }
-
-
-
-// Acá se valida el nombre, se guarda en localStorage y se oculta la pantalla de bienvenida
-
 
 function saveName() {
   const name = nameInput.value.trim();
@@ -52,10 +42,6 @@ function saveName() {
   hideWelcome();
 }
 
-
-
-//Efectitoooo de salida para la biuenvenida 
-
 function hideWelcome() {
   welcomeScreen.classList.add('fade-out');
   welcomeScreen.addEventListener('animationend', () => {
@@ -64,8 +50,6 @@ function hideWelcome() {
     welcomeScreen.setAttribute('aria-hidden', 'true');
   }, { once: true });
 }
-
-// Mensajito de error x si hay duplicado
 
 function showWelcomeError(message) {
   const existing = welcomeScreen.querySelector('.welcome-error');
@@ -82,25 +66,16 @@ function showWelcomeError(message) {
   setTimeout(() => error.remove(), 3000);
 }
 
-// Funciones para estadísticas
-
-
 function updateStats() {
   const essence  = getEssence();
   const missions = getMissions();
   const sealed   = missions.filter((m) => m.estado === 'sellada').length;
   const rank     = calculateRank(essence);
-    // Animación de conteo para los números
   animateCounter(statEssence, essence);
   animateCounter(statSealed,  sealed);
 
   statRank.textContent = rank.nombre;
 }
-
-//Anima un elemento de texto contando desde 0 hasta el valor objetivo. 
-// Si el valor es 0, lo escribe directamente sin animación. 
-// @param {HTMLElement} element - El elemento a animar.
-// @param {number} target - El número final.
 
 function animateCounter(element, target) {
   if (target === 0) {
@@ -121,12 +96,10 @@ function animateCounter(element, target) {
 
     if (step >= steps) {
       clearInterval(timer);
-      element.textContent = target; 
+      element.textContent = target;
     }
   }, interval);
 }
-
-// Inicialización
 
 document.addEventListener('DOMContentLoaded', () => {
   initWelcome();

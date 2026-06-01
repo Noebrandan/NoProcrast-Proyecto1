@@ -26,11 +26,10 @@
     <main id="main-content">
         <div class="container">
 
-            <!-- PERFIL -->
             <section class="profile-card" aria-labelledby="profile-heading">
 
-                <div class="profile-top">
-                    <div class="profile-info">
+                <article class="profile-top">
+                    <div class="profile-info" aria-label="Información del perfil">
                         <div class="avatar" id="profile-avatar" aria-hidden="true">⚔️</div>
                         <div>
                             <h2 id="profile-name">—</h2>
@@ -38,9 +37,9 @@
                         </div>
                     </div>
                     <button class="btn-outline" id="edit-btn" type="button">Editar nombre</button>
-                </div>
+                </article>
 
-                <div class="progress-section" aria-label="Progreso al siguiente rango">
+                <section class="progress-section" aria-label="Progreso al siguiente rango">
                     <div class="progress-header">
                         <span id="progress-label">Progreso al siguiente rango</span>
                         <span id="progress-numbers" aria-live="polite">0 / 0 esencia</span>
@@ -48,60 +47,54 @@
                     <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progress-label">
                         <div class="progress-fill" id="progress-fill"></div>
                     </div>
-                </div>
+                </section>
 
                 <button class="reset-btn" id="reset-btn" type="button">Reiniciar progreso</button>
 
             </section>
 
-            <!-- EDITAR NOMBRE -->
             <section class="edit-card" id="edit-card" style="display:none;" aria-label="Editar nombre">
                 <h3>Editar nombre</h3>
                 <label class="sr-only" for="edit-input">Nuevo nombre</label>
                 <input id="edit-input" type="text" value="" maxlength="30" autocomplete="off">
-                <div class="buttons">
+                <nav class="buttons" role="group" aria-label="Acciones de edición">
                     <button class="btn-primary" id="save-btn" type="button">Guardar</button>
                     <button class="btn-secondary" id="cancel-btn" type="button">Cancelar</button>
-                </div>
+                </nav>
             </section>
 
-            <!-- ESTADÍSTICAS -->
             <section class="stats" aria-labelledby="stats-heading">
                 <h3 id="stats-heading">Estadísticas</h3>
-                <div class="stats-grid">
-                    <div class="stat-box">
+                <div class="stats-grid" role="region" aria-label="Grid de estadísticas">
+                    <article class="stat-box" aria-labelledby="stat-esencia-label">
                         <div class="number yellow" id="stat-esencia" aria-live="polite">0</div>
-                        <p>Esencia total</p>
-                    </div>
-                    <div class="stat-box">
+                        <p id="stat-esencia-label">Esencia total</p>
+                    </article>
+                    <article class="stat-box" aria-labelledby="stat-selladas-label">
                         <div class="number green" id="stat-selladas" aria-live="polite">0</div>
-                        <p>Selladas</p>
-                    </div>
-                    <div class="stat-box">
+                        <p id="stat-selladas-label">Selladas</p>
+                    </article>
+                    <article class="stat-box" aria-labelledby="stat-pendientes-label">
                         <div class="number red" id="stat-pendientes" aria-live="polite">0</div>
-                        <p>Pendientes</p>
-                    </div>
-                    <div class="stat-box">
+                        <p id="stat-pendientes-label">Pendientes</p>
+                    </article>
+                    <article class="stat-box" aria-labelledby="stat-total-label">
                         <div class="number white" id="stat-total" aria-live="polite">0</div>
-                        <p>Total</p>
-                    </div>
+                        <p id="stat-total-label">Total</p>
+                    </article>
                 </div>
             </section>
 
-            <!-- LOGROS -->
             <section class="achievements" aria-labelledby="logros-heading">
                 <h3 id="logros-heading">Logros</h3>
-                <div class="achievement-grid" id="logros-grid">
-                    <!-- Renderizado por perfil.js -->
+                <div class="achievement-grid" id="logros-grid" role="region" aria-label="Logros desbloqueados">
                 </div>
             </section>
 
-            <!-- COLECCIÓN DE CARTAS -->
             <section class="collection" aria-labelledby="coleccion-heading">
                 <h3 id="coleccion-heading">Colección</h3>
                 <p class="collection-subtitle" id="coleccion-subtitulo">Las figuras que la cueva te reveló.</p>
-                <div class="collection-grid" id="coleccion-grid" aria-live="polite">
-                    <!-- Renderizado por perfil.js -->
+                <div class="collection-grid" id="coleccion-grid" role="region" aria-live="polite" aria-label="Figuras reveladas">
                 </div>
             </section>
 
