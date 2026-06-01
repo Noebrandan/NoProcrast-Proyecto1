@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salamanca</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <a class="skip-link" href="#main-content">Saltar al contenido</a>
+
+    <header>
+
+        <nav class="nav-principal" aria-label="Navegación principal">
+
+            <a class="nav-logo" href="index.html">Salamanca</a>
+
+            <ul class="nav-links">
+                <li><a href="index.html" aria-current="page">Inicio</a></li>
+                <li><a href="pages/misiones.html">Misiones</a></li>
+                <li><a href="/pages/perfil.html">Perfil</a></li>
+            </ul>
+            
+        </nav>
+
+    </header>
+
+
+    <main id="main-content">
+
+        <section class="welcome" id="welcome-screen" aria-labelledby="welcome-title">
+
+            <h2 id="welcome-title">¿Cómo te llaman en la cueva?</h2>
+            <label class="sr-only" for="name-input">Nombre de usuario</label>
+            <input type="text" id="name-input" placeholder="Tu nombre" autocomplete="name">
+            <button id="enter-btn" type="button">Ingresar a la cueva</button>
+
+        </section>
+
+        <section class="hero">
+            <h1>La cueva te espera</h1>
+            <p>Convertí pequeñas tareas en progreso y desbloqueá nuevas figuras argentinas.</p>
+            <a href="pages/misiones.html" class="btn">Comenzar</a>
+        </section>
+
+        <section class="stats" aria-label="Estadísticas generales">
+
+            <article class="stat-card" aria-labelledby="essence-label"> 
+                <span class="stat-valor" id="total-essence">0</span>
+                <span class="stat-label" id="essence-label">Esencia</span>
+            </article>
+
+            <article class="stat-card" aria-labelledby="sealed-label">
+                <span class="stat-valor" id="sealed-missions">0</span>
+                <span class="stat-label" id="sealed-label">Selladas</span>
+            </article>
+
+            <article class="stat-card" aria-labelledby="rank-label">
+                <span class="stat-valor" id="current-rank">Aprendiz</span>
+                <span class="stat-label" id="rank-label">Rango</span>
+            </article>
+
+        </section>
+
+    </main>
+
+    
+
+    <footer>
+        <p>La cueva siempre recuerda a quienes regresan.</p>
+        <p>Salamanca © 2026 — Toda leyenda comienza con un paso.</p>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+    
+</body>
+
+</html>

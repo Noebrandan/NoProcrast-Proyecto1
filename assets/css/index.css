@@ -1,0 +1,236 @@
+/* ═══════════════════════════════════════════
+   SALAMANCA — index.css
+   Styles specific to index.html:
+   welcome screen, hero, stat cards.
+   Requires styles.css to be loaded first.
+   ═══════════════════════════════════════════ */
+
+/* ─── Welcome screen ────────────────────────────────────────────── */
+
+.welcome {
+  position: fixed;
+  inset: 0;
+  z-index: 200;
+  background: radial-gradient(ellipse 60% 50% at 50% 60%, #3a1f08 0%, #1c1510 60%, #0e0b07 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--gap-lg);
+  padding: var(--gap-lg);
+  text-align: center;
+}
+
+.welcome::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse 80% 80% at 50% 50%, transparent 40%, rgba(10,6,3,0.7) 100%);
+  pointer-events: none;
+}
+
+.welcome h2 {
+  font-family: var(--font-titulo);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  color: var(--dorado);
+  letter-spacing: 0.1em;
+  position: relative;
+}
+
+.welcome input {
+  background-color: rgba(42, 31, 20, 0.9);
+  border: 1px solid var(--border-dorado);
+  border-radius: var(--radius-sm);
+  color: var(--texto);
+  font-family: var(--font-cuerpo);
+  font-size: 1.1rem;
+  padding: 0.8rem 1.2rem;
+  text-align: center;
+  outline: none;
+  width: 100%;
+  max-width: 320px;
+  transition: border-color var(--transition), box-shadow var(--transition);
+  position: relative;
+}
+
+.welcome input::placeholder {
+  color: var(--texto-muted);
+}
+
+.welcome input:focus {
+  border-color: var(--dorado);
+  box-shadow: 0 0 0 3px rgba(201, 168, 76, 0.1), 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+.welcome button {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-titulo);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 0.75rem 2rem;
+  border-radius: var(--radius-sm);
+  background: linear-gradient(135deg, var(--dorado-suave), var(--dorado));
+  color: #1c1510;
+  border: 1px solid var(--dorado);
+  cursor: pointer;
+  transition: background var(--transition), box-shadow var(--transition);
+}
+
+.welcome button:hover {
+  background: linear-gradient(135deg, var(--dorado), var(--dorado-claro));
+  box-shadow: 0 0 24px rgba(201, 168, 76, 0.4);
+}
+
+.welcome-error {
+  font-family: var(--font-cuerpo);
+  font-size: 0.9rem;
+  color: #c05050;
+  position: relative;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; pointer-events: none; }
+}
+
+.fade-out {
+  animation: fadeOut 0.6s ease forwards;
+}
+
+/* ─── Hero ───────────────────────────────────────────────────────── */
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: var(--gap-xl) var(--gap-lg) var(--gap-lg);
+  min-height: 60vh;
+  gap: var(--gap-md);
+  background: radial-gradient(ellipse 70% 40% at 50% 100%, rgba(122, 74, 30, 0.2) 0%, transparent 70%);
+}
+
+.hero h1 {
+  font-size: clamp(2.5rem, 10vw, 6rem);
+  font-weight: 900;
+  color: var(--dorado);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 60px rgba(201, 168, 76, 0.35), 0 2px 4px rgba(0,0,0,0.6);
+}
+
+.hero p {
+  color: var(--texto-suave);
+  font-style: italic;
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  max-width: 440px;
+}
+
+/* ─── Stat cards ────────────────────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--gap-md);
+  padding: 0 var(--gap-lg) var(--gap-xl);
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.stat-card {
+  background: linear-gradient(160deg, var(--bg-card) 0%, #221508 100%);
+  border: 1px solid var(--border-dorado);
+  border-radius: var(--radius-md);
+  padding: var(--gap-lg) var(--gap-md);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-xs);
+  position: relative;
+  overflow: hidden;
+  transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 28px; height: 28px;
+  border-top: 1px solid var(--dorado-suave);
+  border-left: 1px solid var(--dorado-suave);
+  border-radius: var(--radius-md) 0 0 0;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; right: 0;
+  width: 28px; height: 28px;
+  border-bottom: 1px solid var(--dorado-suave);
+  border-right: 1px solid var(--dorado-suave);
+  border-radius: 0 0 var(--radius-md) 0;
+  opacity: 0.5;
+  transition: opacity var(--transition);
+}
+
+.stat-card:hover {
+  border-color: var(--dorado);
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.12), inset 0 0 30px rgba(201, 168, 76, 0.04);
+  transform: translateY(-2px);
+}
+
+.stat-card:hover::before,
+.stat-card:hover::after {
+  opacity: 1;
+}
+
+.stat-valor {
+  font-family: var(--font-titulo);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  color: var(--dorado);
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+}
+
+.stat-label {
+  font-family: var(--font-titulo);
+  font-size: 0.6rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+/* ─── Responsive ────────────────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .hero {
+    padding: var(--gap-lg) var(--gap-md) var(--gap-md);
+    min-height: 45vh;
+  }
+
+  .stats {
+    grid-template-columns: 1fr;
+    padding: 0 var(--gap-md) var(--gap-lg);
+    max-width: 340px;
+  }
+
+  .stat-card {
+    flex-direction: row;
+    justify-content: center;
+    padding: var(--gap-md);
+    gap: var(--gap-md);
+    text-align: left;
+  }
+
+  .stat-valor { font-size: 1.8rem; }
+}
